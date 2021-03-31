@@ -1,0 +1,355 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="../web/css/student.css">
+    <!--<link rel="script" href="../chat/include/photo.js">-->
+    <script type='text/javascript'>
+      function preview_image(event) 
+      {
+        var reader = new FileReader();
+        reader.onload = function()
+        {
+          var output = document.getElementById('output_image');
+          output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+      }
+</script>
+<script type="text/javascript">
+  function populate(s1, s2){
+    var s1 = document.getElementById(s1);
+    var s2 = document.getElementById(s2);
+    s2.innerHTML = "";
+    if(s1.value == "5-6 yrs"){
+      var optionArray = [ "Codey Make X|Codey Make X", "Duplo - Early Simple& motorised machines|Duplo - Early Simple& motorised machines", "Early electronics|Early electronics", "Scratch Basic|Scratch Basic", "Scratch Advance|Scratch Advance", "FUN GAME WITH CODING (BLOCKLEY)|FUN GAME WITH CODING (BLOCKLEY)", "3D MODELLING WITH SHAPE - LEVEL 1 -|3D MODELLING WITH SHAPE - LEVEL 1 -", "3D MODELLING WITH SHAPE - LEVEL 2 -|3D MODELLING WITH SHAPE - LEVEL 2 -", "Expert Creative Coder|Expert Creative Coder"];
+    }
+    else if(s1.value == "7-9 yrs"){
+      var optionArray = [ "WeDo|WeDo", "PlayBots|PlayBots", "Simple and Motorised Mechanisms(9686)|Simple and Motorised Mechanisms(9686)","Lego Spike|Lego Spike", "Scratch Math|Scratch Math", "Mathematical 3D Design Simulation|Mathematical 3D Design Simulation", "MIINECRAFT - Level 1|MIINECRAFT - Level 1", "MIINECRAFT - Leve 2|MIINECRAFT - Leve 2", "Expert Math Coder|Expert Math Coder"];
+    }
+    else if(s1.value == "9-12 yrs"){
+      var optionArray = [ "EV3 Mindstorms Basic|EV3 Mindstorms Basic", "EV3 Mindstorms Advance|EV3 Mindstorms Advance", "Science with EV3|Science with EV3","MakeX Starter|MakeX Starter","OMO Tools - electronics|OMO Tools - electronics","OMO Tools - Arduino|OMO Tools - Arduino","OMO Tools - EMA|OMO Tools - EMA","OMO Tools - Autobots|OMO Tools - Autobots", "MIT APP Inventor - Level 1|MIT APP Inventor - Level 1", "MIT APP Inventor - Level 2|MIT APP Inventor - Level 2", "Python Block Coding - 1|Python Block Coding - 1", "Python Block Coding - 2|Python Block Coding - 2", "Electronics Level - 1|Electronics Level - 1", "Electronics Level - 2|Electronics Level - 2", "Junior Fusion 360 - Level -1|Junior Fusion 360 - Level -1", "Junior Fusion 360 - Level -2|Junior Fusion 360 - Level -2", "Application based JAVA CODING - Level 1|Application based JAVA CODING - Level 1", "Application based JAVA CODING - Level 2|Application based JAVA CODING - Level 2", "Web Development Level 1 - WIX|Web Development Level 1 - WIX", "Web Development Level 2 -HTML/CSS|Web Development Level 2 -HTML/CSS", "Web Development Level 3 - HTML/CSS/JS/PHP|Web Development Level 3 - HTML/CSS/JS/PHP", "AI using Blocks|AI using Blocks", "Expert Game Coder Level 1|Expert Game Coder Level 1", "Expert game coder Level 2|Expert game coder Level 2", "Expert Machine Automation|Expert Machine Automation", "Drone Sumulation (Online) (One year licence)|Drone Sumulation (Online) (One year licence)"];
+    }
+    else if(s1.value == "12-15 yrs"){
+      var optionArray = [ "EV3 Python programming level 1|EV3 Python programming level 1", "EV3 Python programming level 2|EV3 Python programming level 2", "OMO Tools - IOT|OMO Tools - IOT","OMO Tools - RPi|OMO Tools - RPi","3D Printing|3D Printing","MakeX Challanger|MakeX Challanger", "Arduino Level - 1|Arduino Level - 1", "Arduino Level - 2|Arduino Level - 2", "Senior Fusion 360 - Level -1 (With 3D Print|Senior Fusion 360 - Level -1 (With 3D Print", "Senior Fusion 360 - Level -2 (With 3D Print|Senior Fusion 360 - Level -2 (With 3D Print", "Python Syntax Level -1|Python Syntax Level -1", "Python Syntax Level -2|Python Syntax Level -2", "Python Syntax Level -3|Python Syntax Level -3", "Python Image processing -1|Python Image processing -1", "Python Image processing -2|Python Image processing -2", "Python Image processing -3|Python Image processing -3", "Drone With Kit (Pluto)|Drone With Kit (Pluto)"];
+    }
+    else if(s1.value == "15+ yrs"){
+      var optionArray = [ "FTC Mechanical Building|FTC Mechanical Building", "Duplo - Early Simple& motorised machines|Duplo - Early Simple& motorised machines", "Early electronics|Early electronics", "Data Analysis Level -0 (math)|Data Analysis Level -0 (math)", "Data Analysis Level -1|Data Analysis Level -1", "Data Analysis Level -2|Data Analysis Level -2", "Data Analysis Level -3|Data Analysis Level -3s", "Machine Learning Level -1|Machine Learning Level -1", "Machine Learning Level -2|Machine Learning Level -2", "Machine Learning Level -3|Machine Learning Level -3", "ENGINEERING AUTOCAD LEVEL 1|ENGINEERING AUTOCAD LEVEL 1", "ENGINEERING AUTOCAD LEVEL 2|ENGINEERING AUTOCAD LEVEL 2", "Professional JAVA L1|Professional JAVA L1", "Professional JAVA L2|Professional JAVA L2", "Research Skilling(Pyhton L1+L2+IP+DA)|Research Skilling(Pyhton L1+L2+IP+DA)", "Research project|Research project", "Research Publishing|Research Publishing", "Research Package|Research Package", "Customised Projects|Customised Projects"];
+    }
+    for(var option in optionArray){
+      var pair = optionArray[option].split("|");
+      var newOption = document.createElement("option");
+      newOption.value = pair[0];
+      newOption.innerHTML = pair[1];
+      s2.options.add(newOption);  
+    }
+  }
+</script>
+<style>
+  body{
+    background-color:  #E5E5E5;
+  }
+  
+</style>
+    <title>Student Registration</title>
+  </head>
+  <body>
+  <div class="row">
+    <div class = "col-lg-4"></div>
+    <div class = "col-lg-4" style="text-align: center;">  
+      <img class="image" src="C:\Users\guest account\Desktop\omotec.png" width="300" height="110">
+    </div>
+    <div class = "col-lg-4"></div>  
+  </div>
+    
+    
+    </div>
+    <p><h3 style="text-align: center; color: #F57434; float: inline-end; align-items: center; text-decoration:underline; ">APPLICATION REGISTRATION FORM</h3></p><hr>
+    <div class="container">
+      <div class="row">
+        <form action="" method="post" class="main-form">         
+          <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-4 " style ="float:left;">-->
+          <div class="col" style ="float:left; width: 430px;">         
+            <h3 style="text-align:center;">Student Information</h3>
+            
+            <div class="form-group s1" data-cid="sr0">
+              <label class="control-label" for="sr0">Applicant Registration Number (ARN)</label>
+              <div class="input-group">
+                <input class="form-control" id="sr0" name="arn" type="text" placeholder="Applicant Registration Number (ARN)" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+          
+            <div class="form-group s1" data-cid="sr1">
+              <label class="control-label" for="sr1">Date of Application</label>
+              <div class="input-group">
+                <input class="form-control" id="sr1" name="date" type="date" placeholder="Date of Application" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr3">
+              <label class="control-label" for="sr7">Age Group</label>
+              <div class="input-group">
+                <select class="form-control" id="select1" name="age" onchange="populate(this.id, 'select2')">
+                  <option value="select">Select</option>
+                  <option value="5-6 yrs"  >5-6 yrs</option>
+                  <option value="7-9 yrs">7-9 yrs</option>
+                  <option value="9-12 yrs">9-12 yrs</option>
+                  <option value="12-15 yrs">12-15 yrs</option>
+                  <option value="15+ yrs">15+ yrs</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr3">
+              <label class="control-label" for="sr7">Course Name</label>
+              <div class="input-group">
+                <select class="form-control" id="select2" name="course"></select>
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr2">
+              <label class="control-label" for="sr2">First Name of the Applicant</label>
+              <div class="input-group">
+                <input class="form-control" id="sr2" name="studentFirstName" type="text" placeholder="Name of the Applicant" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr22">
+              <label class="control-label" for="sr22">Last Name of the Applicant</label>
+              <div class="input-group">
+                <input class="form-control" id="sr22" name="studentLastName" type="text" placeholder="Name of the Applicant" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr3">
+              <label class="control-label" for="sr7">Gender</label>
+              <div class="input-group">
+                <select class="form-control" id="sr3" name="gender">
+                  <option value="select">Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr4">
+              <label class="control-label" for="sr4">Date of Birth</label>
+              <div class="input-group">
+                <input class="form-control" id="sr4" name="studentbirth" type="date" placeholder="Date of Birth" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr5">
+              <label class="control-label" for="sr5">Age of Applicant</label>
+              <div class="input-group">
+                <input class="form-control" id="sr5" name="age" type="number" min="1" max="70" placeholder="Age of Applicant" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr6">
+              <label class="control-label" for="sr6">Residential Address</label>
+              <div class="input-group">
+                <input class="form-control" id="sr6" name="address" type="text" placeholder="Residential Address" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr7">
+              <label class="control-label" for="sr7">Residence Phone Number</label>
+              <div class="input-group">
+                <input class="form-control" id="sr7" name="phonenumber" type="tel" placeholder="Residence Phone Number" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr8">
+              <label class="control-label" for="sr8">Emergency Phone Number</label>
+              <div class="input-group">
+                <input class="form-control" id="sr8" name="emergencynumber" type="tel" placeholder="Emergency Phone Number" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr9">
+              <label class="control-label" for="sr9">Nationality</label>
+              <div class="input-group">
+                <input class="form-control" id="sr9" name="nationality" type="text" placeholder="For eg: Indian" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr10">
+              <label class="control-label" for="sr10">Mother Tongue</label>
+              <div class="input-group">
+                <input class="form-control" id="sr10" name="mothertongue" type="text" placeholder="Mother Tongue" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr11">
+              <label class="control-label" for="sr11">School</label>
+              <div class="input-group">
+                <input class="form-control" id="sr11" name="school" type="text" placeholder="School Information" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr12">
+              <label class="control-label" for="sr12">Blood Group</label>
+              <div class="input-group">
+                <input class="form-control" id="sr12" name="bloodgroup" type="text" placeholder="Blood Group of Applicant" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+          </div>
+          
+
+          <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-4 " style ="float:left;">-->
+          <div class="col" style ="float:right;">         
+            <h3 style="text-align:center;">Guardian's Information</h3>
+
+            <div class="form-group s1" data-cid="sr13">
+              <label class="control-label" for="sr13">Guardian Name</label>
+              <div class="input-group">
+                <input class="form-control" id="sr13" name="guardianname" type="text" placeholder="Guardian Name" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr14">
+              <label class="control-label" for="sr14">Date of Birth</label>
+              <div class="input-group">
+                <input class="form-control" id="sr14" name="guardianbirth" type="date" placeholder="Date of Birth" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr15">
+              <label class="control-label" for="sr15">Education Qualification</label>
+              <div class="input-group">
+                <input class="form-control" id="sr15" name="qualification" type="text" placeholder="Education Qualification" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr16">
+              <label class="control-label" for="sr16">Occupation Profession</label>
+              <div class="input-group">
+                <input class="form-control" id="sr16" name="occupation" type="text" placeholder="Occupation Profession" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr17">
+              <label class="control-label" for="sr17">Office Address</label>
+              <div class="input-group">
+                <input class="form-control" id="sr17" name="officeaddress" type="text" placeholder="Office Address" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr18">
+              <label class="control-label" for="sr18">Mobile Number</label>
+              <div class="input-group">
+                <input class="form-control" id="sr18" name="mobilenumber" type="tel" placeholder="Mobile Number" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr19">
+              <label class="control-label" for="sr19">Email Address</label>
+              <div class="input-group">
+                <input class="form-control" id="sr19" name="email" type="email" placeholder="something@site.com" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr20">
+              <label class="control-label" for="sr20">Relationship with the Applicant</label>
+              <div class="input-group">
+                <input class="form-control" id="sr20" name="relationship" type="text" placeholder="Relationship with the Applicant" data-rule-required="true" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-group s1" data-cid="sr21">
+              <label class="control-label" for="sr21">Any Specific Details of the Applicant You Would Like to Share</label>
+              <div class="input-group">
+                <textarea class="form-control" id="sr21" name="specification" rows="6" placeholder="Any Specific Details of the Applicant You Would Like to Share" data-rule-required="true" autocomplete="off"></textarea>
+              </div>
+            </div>
+            <br>
+            <div class="form-check">
+              <input class="form-check-input" name="term" type="checkbox" value="" id="flexCheckDefault" required>
+              <label class="form-check-label" for="flexCheckDefault">
+                 <a class="term" target="_blank" href="terms_condition.html">Terms & Conditions Apply</a>
+              </label>
+            </div><br>
+            <div id="wrapper" >
+              <img id="output_image"/>
+                <input type="file" name="studentimage" accept="image/*" onchange="preview_image(event)">
+            </div>
+          </div>
+          </div>  
+        <hr> 
+          <div class="row">
+            <div class="declare">
+              <h3 style="text-align:center;">DECLARATION / UNDERTAKING</h3>
+              <p>
+              A. I undertake to abide by the policies and regulations of OMOTEC and I understand that in serious instances of breach, like damage to OMOTEC’s property,
+              &nbsp;&nbsp;&nbsp;&nbsp;bodily harm to another Applicant/professor, the Applicant may be asked to leave OMOTEC.<br>
+              B. I acknowledge that, OMOTEC will take reasonable precautions and exercise due diligence during the activities being conducted within its premises in  
+              &nbsp;&nbsp;&nbsp;&nbsp;keeping the Applicant secure and safe, however it will bear no responsibility should the Applicant engage in any reckless and/or careless behavior that may 
+              &nbsp;&nbsp;&nbsp;&nbsp;endanger his/her safety and others around and as such cause harm or injury to himself/herself and/or others.<br>
+              C. I understand that OMOTEC shall not be responsible for the loss of books, money, clothes, ornaments, laptops, mobile phones or any other electronic 
+              &nbsp;&nbsp;&nbsp;&nbsp;gadget/s and/or any other valuable articles of whatsoever nature belonging to the Applicant.<br>
+              D. I agree to the Applicant's photograph/videos appearing in any of the OMOTEC’s brochures, advertisements, social media or publications or for the benefit 
+              &nbsp;&nbsp;&nbsp;&nbsp;of OMOTEC.<br>
+              E. I acknowledge that, on completion of his/her course/project/coaching at OMOTEC, the Applicant shall return any or all the property of OMOTEC that he/she
+              &nbsp;&nbsp;&nbsp;&nbsp;might have borrowed during their time of course/coaching/project in OMOTEC.<br>
+              F. I acknowledge that, I will be responsible for timely drop and pick up of the Applicant at OMOTEC and keep OMOTEC duly informed and/or updated in case 
+              &nbsp;&nbsp;&nbsp;&nbsp;of any absence of the Applicant and/or any change in the above details.<br>
+              G. I have read and understood the detailed policies (including but not limited to ‘Terms of Use’ and ‘Privacy Policy’ available on 
+              &nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="https//:www.onmyowntechnology.com/">www.onmyowntechnology.com<a> or any other policy as amended from time to time), and I hereby agree to and accept the same.<br> 
+              </p>
+            </div>
+          </div>
+          <div class="row" style="text-align:center;">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4">
+          <button style="width:100px;" type="submit" class="btn btn-primary btn-sm">SUBMIT</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;<button style="width:100px;" type="reset" class="btn btn-primary btn-sm">RESET</button>
+          </div>
+          <div class="col-lg-4"></div>
+          <br>
+          </div>
+        </form>
+      </div>
+      <hr>
+      <div class="row">
+        <div class = "col-lg-2">
+        </div>
+          
+        <div class = "col-lg-8" style="text-align: center;">
+          <div class="text" style="float: inline; text-align:center;">
+            <!--<img class="image1" src="../chat/images/address.png" width="600" height="200">-->
+            <p style="color: #F57435"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+            </svg>&nbsp;1018, B Wing, Samarth Aishwarya, New Link Road, Lokhandwala,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oshiwara, above Marks & Spencers, Mumbai- 400 053<br></p><p style="color:#0064A7; font-size:15px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+            <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+            <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            </svg>&nbsp;7045200303&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-inbound" viewBox="0 0 16 16">
+            <path d="M15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0zm-12.2 1.182a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+            </svg>&nbsp;022 26339263, 022 66999120&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+            </svg>&nbsp;admin@onmyowntechnology.com</p>
+          </div>
+        </div>  
+        <div class = "col-lg-2">
+        </div>
+
+
+      </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    
+  </body>
+</html>
